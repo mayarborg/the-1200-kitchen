@@ -54,9 +54,32 @@
 </div>
 
 <section class="wrap tight">
+
+  <!-- Shown only when the page is opened from a shared link -->
+  <div id="import-banner" class="import-banner no-print" hidden>
+    <div>
+      <strong id="import-title">A shared list</strong>
+      <p class="small muted" id="import-detail"></p>
+    </div>
+    <div class="btn-row">
+      <button type="button" class="btn btn-primary btn-sm" id="import-accept">Add it to my lists</button>
+      <button type="button" class="btn btn-ghost btn-sm" id="import-dismiss">No thanks</button>
+    </div>
+  </div>
+
+  <!-- One tab per list -->
+  <div class="list-bar no-print">
+    <div class="list-tabs" id="list-tabs" role="tablist" aria-label="Your lists"></div>
+    <div class="btn-row">
+      <button type="button" class="btn btn-ghost btn-sm" id="new-list">+ New list</button>
+      <button type="button" class="btn btn-ghost btn-sm" id="manage-list">Rename&hellip;</button>
+    </div>
+  </div>
+
   <div class="grocery-layout">
     <div>
       <div class="btn-row no-print" style="margin-bottom:1.5rem">
+        <button type="button" class="btn btn-primary btn-sm" id="share-list">Send to my phone</button>
         <button type="button" class="btn btn-secondary btn-sm" id="print-list">Print the list</button>
         <button type="button" class="btn btn-ghost btn-sm" id="uncheck-all">Untick everything</button>
         <button type="button" class="btn btn-ghost btn-sm" id="clear-list">Clear the whole list</button>
@@ -76,6 +99,14 @@
           <input type="text" id="manual-item" placeholder="Add an item">
           <button type="button" class="btn btn-primary btn-sm" id="add-manual">Add</button>
         </div>
+      </div>
+
+      <div class="panel no-print" style="margin-top:1.5rem">
+        <h2 style="font-size:1.15rem;font-family:var(--sans);font-weight:700">Aisle order</h2>
+        <p class="small muted">Put these in the order you actually walk your
+          supermarket and the list will follow.</p>
+        <ul class="aisle-order" id="aisle-order"></ul>
+        <button type="button" class="btn btn-ghost btn-sm" id="reset-aisles">Reset to default</button>
       </div>
     </aside>
   </div>
