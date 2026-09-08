@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Build my day — The 1,200 Kitchen</title>
+<meta name="description" content="An interactive meal planner. Choose breakfast, lunch, dinner and snacks, set your own calorie target, and see the totals update as you build.">
+<meta name="theme-color" content="#F6F2E8">
+<meta property="og:title" content="Build my day — The 1,200 Kitchen">
+<meta property="og:description" content="An interactive meal planner. Choose breakfast, lunch, dinner and snacks, set your own calorie target, and see the totals update as you build.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="The 1,200 Kitchen">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,400;0,600;0,700;1,400&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%237D3350'/><text x='16' y='23' font-family='Georgia,serif' font-size='19' fill='%23FFFDF8' text-anchor='middle'>K</text></svg>">
+
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header no-print">
+  <div class="wrap header-inner">
+    <a class="brand" href="index.html">
+      The <span class="brand-figure">1,200</span> Kitchen
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+      <span class="bars" aria-hidden="true"><span></span><span></span><span></span></span>
+      Menu
+    </button>
+    <nav class="site-nav" id="site-nav" aria-label="Main">
+      <ul class="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="recipes.html">Recipes</a></li>
+          <li><a href="build.html">Build my day</a></li>
+          <li><a href="calculator.html">My calories</a></li>
+          <li><a href="grocery.html">Grocery list</a></li>
+          <li><a href="fridge.html">My fridge</a></li>
+          <li><a href="nutrition.html">Nutrition</a></li>
+          <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+    <a class="day-chip" href="build.html"><span class="chip-label">Today</span><span>&mdash;</span></a>
+  </div>
+</header>
+
+<main id="main">
+
+<div class="wrap page-header">
+  <h1>Build my day</h1>
+  <p class="lead">Choose a breakfast, a lunch, a dinner and as many snacks as you like.
+    Everything adds up as you go.</p>
+</div>
+
+<section class="wrap tight">
+  <div class="build-layout">
+    <div>
+      <div id="slots"></div>
+      <div class="btn-row" style="margin-top:1.5rem">
+        <button type="button" class="btn btn-olive" id="day-to-grocery">Add today&rsquo;s meals to grocery list</button>
+        <button type="button" class="btn btn-ghost" id="reset-day">Reset the day</button>
+      </div>
+    </div>
+
+    <aside class="build-summary" aria-label="Day summary">
+      <div class="summary-card">
+        <h2>Your day</h2>
+
+        <div class="target-field">
+          <label for="target-input">Daily target</label>
+          <input type="number" id="target-input" min="800" max="6000" step="10" inputmode="numeric">
+          <span class="small muted">kcal</span>
+        </div>
+
+        <div class="dial">
+          <div class="dial-wrap">
+            <svg viewBox="0 0 120 120" aria-hidden="true" focusable="false">
+              <circle class="dial-track" cx="60" cy="60" r="50"></circle>
+              <circle class="dial-fill" id="build-dial" cx="60" cy="60" r="50"
+                      stroke-dasharray="314" stroke-dashoffset="314"></circle>
+            </svg>
+            <div class="dial-centre">
+              <span class="dial-kcal" id="build-kcal">0</span>
+              <span class="dial-of" id="build-of">of 1,200 kcal</span>
+            </div>
+          </div>
+        </div>
+
+        <p class="visually-hidden" role="status" aria-live="polite" id="build-live"></p>
+
+        <div class="macro-row">
+          <div><span class="macro-value" id="build-protein">0 g</span><span class="macro-label">Protein</span></div>
+          <div><span class="macro-value" id="build-carbs">0 g</span><span class="macro-label">Carbs</span></div>
+          <div><span class="macro-value" id="build-fat">0 g</span><span class="macro-label">Fat</span></div>
+        </div>
+
+        <div class="remaining-line" id="remaining-line">
+          <span class="remaining-label">Remaining</span>
+          <span id="remaining-value">1,200 kcal</span>
+        </div>
+      </div>
+
+      <div class="summary-card" style="margin-top:1.5rem" id="suggestions-card">
+        <h2 style="font-size:1.15rem;font-family:var(--sans);font-weight:700">Fill the gap</h2>
+        <p class="small muted" id="suggestions-intro"></p>
+        <div class="chip-set" id="suggestion-filters" style="margin-bottom:1rem"></div>
+        <ul class="suggestion-list" id="suggestions"></ul>
+      </div>
+    </aside>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer no-print">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <h2>The 1,200 Kitchen</h2>
+        <p>Small portions. Big flavour. Meals that actually satisfy.</p>
+        <p>A recipe library for people who want realistic portions, ordinary
+           ingredients and nutrition information that is easy to find.</p>
+      </div>
+      <div>
+        <h3>Cook</h3>
+        <ul>
+          <li><a href="recipes.html">All recipes</a></li>
+          <li><a href="recipes.html?category=Breakfasts">Breakfasts</a></li>
+          <li><a href="recipes.html?category=Bowls%20%26%20Salads">Bowls &amp; salads</a></li>
+          <li><a href="recipes.html?category=Quick%20Meals">Quick meals</a></li>
+          <li><a href="recipes.html?category=Snacks%20%26%20Sweet%20Things">Snacks &amp; sweet things</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Plan</h3>
+        <ul>
+          <li><a href="build.html">Build my day</a></li>
+          <li><a href="calculator.html">Calculate my daily needs</a></li>
+          <li><a href="grocery.html">Grocery list</a></li>
+          <li><a href="fridge.html">What&rsquo;s in my fridge?</a></li>
+          <li><a href="nutrition.html">Nutrition basics</a></li>
+          <li><a href="about.html">About this site</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-base">
+      <p>&copy; <span class="js-year">2026</span> The 1,200 Kitchen. The nutrition information provided on this website is intended for general informational purposes only. Calorie and nutrient requirements vary between individuals. The calculator provides an estimate, not medical or dietary advice. If you have specific nutritional, medical or dietary needs, consult an appropriately qualified healthcare professional.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="js/recipes.js"></script>
+<script src="js/app.js"></script>
+<script src="js/build.js"></script>
+</body>
+</html>

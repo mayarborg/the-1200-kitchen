@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Recipes — The 1,200 Kitchen</title>
+<meta name="description" content="Browse every recipe in The 1,200 Kitchen. Filter by category, calories, protein and cooking time, or search by ingredient.">
+<meta name="theme-color" content="#F6F2E8">
+<meta property="og:title" content="Recipes — The 1,200 Kitchen">
+<meta property="og:description" content="Browse every recipe in The 1,200 Kitchen. Filter by category, calories, protein and cooking time, or search by ingredient.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="The 1,200 Kitchen">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,400;0,600;0,700;1,400&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%237D3350'/><text x='16' y='23' font-family='Georgia,serif' font-size='19' fill='%23FFFDF8' text-anchor='middle'>K</text></svg>">
+
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header no-print">
+  <div class="wrap header-inner">
+    <a class="brand" href="index.html">
+      The <span class="brand-figure">1,200</span> Kitchen
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+      <span class="bars" aria-hidden="true"><span></span><span></span><span></span></span>
+      Menu
+    </button>
+    <nav class="site-nav" id="site-nav" aria-label="Main">
+      <ul class="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="recipes.html">Recipes</a></li>
+          <li><a href="build.html">Build my day</a></li>
+          <li><a href="calculator.html">My calories</a></li>
+          <li><a href="grocery.html">Grocery list</a></li>
+          <li><a href="fridge.html">My fridge</a></li>
+          <li><a href="nutrition.html">Nutrition</a></li>
+          <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+    <a class="day-chip" href="build.html"><span class="chip-label">Today</span><span>&mdash;</span></a>
+  </div>
+</header>
+
+<main id="main">
+
+<div class="wrap page-header">
+  <h1>Recipes</h1>
+  <p class="lead">Everything in the kitchen, with the nutrition on the front of the card.
+    Search by name or ingredient, or narrow it down with the filters.</p>
+</div>
+
+<section class="wrap tight">
+  <form class="filter-bar" id="filter-bar" role="search" aria-label="Search and filter recipes">
+    <div class="search-row">
+      <div class="search-field">
+        <span class="search-icon" aria-hidden="true">
+          <svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="8.5" cy="8.5" r="6"/><path d="M13 13l4.5 4.5" stroke-linecap="round"/>
+          </svg>
+        </span>
+        <label class="visually-hidden" for="q">Search recipes by name, ingredient or category</label>
+        <input type="search" id="q" name="q" placeholder="Try halloumi, chicken, under 400 kcal, high protein&hellip;"
+               autocomplete="off">
+      </div>
+      <p class="search-hint">You can search ingredients as well as names. Phrases like
+        &ldquo;under 300 kcal&rdquo;, &ldquo;high protein&rdquo; and &ldquo;quick&rdquo; work too.</p>
+    </div>
+
+    <div class="filter-grid">
+      <div class="field">
+        <label for="f-category">Category</label>
+        <select id="f-category"><option value="">All categories</option></select>
+      </div>
+      <div class="field">
+        <label for="f-kcal">Calories</label>
+        <select id="f-kcal">
+          <option value="">Any</option>
+          <option value="100">Under 100 kcal</option>
+          <option value="200">Under 200 kcal</option>
+          <option value="300">Under 300 kcal</option>
+          <option value="400">Under 400 kcal</option>
+          <option value="500">Under 500 kcal</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="f-protein">Protein</label>
+        <select id="f-protein">
+          <option value="">Any</option>
+          <option value="15">15 g or more</option>
+          <option value="20">20 g or more</option>
+          <option value="25">25 g or more</option>
+          <option value="30">30 g or more</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="f-time">Total time</label>
+        <select id="f-time">
+          <option value="">Any</option>
+          <option value="10">10 minutes or less</option>
+          <option value="20">20 minutes or less</option>
+          <option value="30">30 minutes or less</option>
+          <option value="45">45 minutes or less</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="f-sort">Sort by</label>
+        <select id="f-sort">
+          <option value="name">Name (A&ndash;Z)</option>
+          <option value="kcal-asc">Calories, lowest first</option>
+          <option value="kcal-desc">Calories, highest first</option>
+          <option value="protein-desc">Protein, highest first</option>
+          <option value="time-asc">Quickest first</option>
+        </select>
+      </div>
+    </div>
+
+    <fieldset style="margin-top:1rem;margin-bottom:0">
+      <legend>Quick filters</legend>
+      <div class="chip-set" id="tag-chips"></div>
+    </fieldset>
+
+    <div class="filter-foot">
+      <p class="result-count" id="result-count" role="status" aria-live="polite"></p>
+      <button type="button" class="btn btn-ghost btn-sm" id="clear-filters">Clear all filters</button>
+    </div>
+  </form>
+
+  <div class="grid grid-cards" id="recipe-grid"></div>
+  <div id="no-results" hidden></div>
+</section>
+
+</main>
+
+<footer class="site-footer no-print">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <h2>The 1,200 Kitchen</h2>
+        <p>Small portions. Big flavour. Meals that actually satisfy.</p>
+        <p>A recipe library for people who want realistic portions, ordinary
+           ingredients and nutrition information that is easy to find.</p>
+      </div>
+      <div>
+        <h3>Cook</h3>
+        <ul>
+          <li><a href="recipes.html">All recipes</a></li>
+          <li><a href="recipes.html?category=Breakfasts">Breakfasts</a></li>
+          <li><a href="recipes.html?category=Bowls%20%26%20Salads">Bowls &amp; salads</a></li>
+          <li><a href="recipes.html?category=Quick%20Meals">Quick meals</a></li>
+          <li><a href="recipes.html?category=Snacks%20%26%20Sweet%20Things">Snacks &amp; sweet things</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Plan</h3>
+        <ul>
+          <li><a href="build.html">Build my day</a></li>
+          <li><a href="calculator.html">Calculate my daily needs</a></li>
+          <li><a href="grocery.html">Grocery list</a></li>
+          <li><a href="fridge.html">What&rsquo;s in my fridge?</a></li>
+          <li><a href="nutrition.html">Nutrition basics</a></li>
+          <li><a href="about.html">About this site</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-base">
+      <p>&copy; <span class="js-year">2026</span> The 1,200 Kitchen. The nutrition information provided on this website is intended for general informational purposes only. Calorie and nutrient requirements vary between individuals. The calculator provides an estimate, not medical or dietary advice. If you have specific nutritional, medical or dietary needs, consult an appropriately qualified healthcare professional.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="js/recipes.js"></script>
+<script src="js/app.js"></script>
+<script src="js/recipes-page.js"></script>
+</body>
+</html>
