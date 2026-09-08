@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" role="img">
+<defs>
+<filter id="g1" x="0" y="0" width="100%" height="100%">
+<feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="3" stitchTiles="stitch"/>
+<feColorMatrix type="saturate" values="0"/>
+</filter>
+<radialGradient id="lt1" cx="38%" cy="26%" r="78%">
+<stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.55"/>
+<stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+</radialGradient>
+<filter id="sh1" x="-30%" y="-30%" width="160%" height="160%">
+<feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#241F1B" flood-opacity="0.13"/>
+</filter>
+</defs>
+<rect width="800" height="600" fill="#EFD6D9"/>
+<rect width="800" height="600" fill="url(#lt1)"/><rect x="150" y="189" width="500" height="275" rx="40" fill="rgba(36,31,27,0.10)"/><rect x="150" y="175" width="500" height="275" rx="40" fill="#D6A76A" filter="url(#sh1)"/><rect x="168" y="193" width="464" height="239" rx="26" fill="#B9834A" opacity="0.35"/><rect x="180" y="205" width="440" height="215" rx="20" fill="#F5EFE2"/><ellipse cx="542.0" cy="248.0" rx="25.8" ry="20.6" fill="#D9603F"/><ellipse cx="503.6" cy="337.2" rx="20.3" ry="16.3" fill="#D9603F"/><ellipse cx="544.2" cy="276.5" rx="23.0" ry="18.4" fill="#D9603F"/><ellipse cx="520.2" cy="250.2" rx="20.7" ry="16.5" fill="#C2452F"/><ellipse cx="556.3" cy="256.7" rx="23.1" ry="18.5" fill="#C2452F"/><ellipse cx="433.0" cy="253.3" rx="21.4" ry="17.1" fill="#D9603F"/><ellipse cx="460.6" cy="369.0" rx="23.7" ry="18.9" fill="#C2452F"/><ellipse cx="450.4" cy="328.0" rx="24.3" ry="19.4" fill="#C2452F"/><ellipse cx="470.2" cy="346.5" rx="24.7" ry="19.8" fill="#C2452F"/><ellipse cx="514.5" cy="319.6" rx="25.5" ry="20.4" fill="#D9603F"/><ellipse cx="343.1" cy="341.0" rx="19.9" ry="15.9" fill="#D9603F"/><ellipse cx="537.0" cy="339.5" rx="10.1" ry="8.1" fill="#7E9152"/><ellipse cx="442.0" cy="292.5" rx="10.0" ry="8.0" fill="#7E9152"/><ellipse cx="508.4" cy="284.3" rx="9.3" ry="7.5" fill="#7E9152"/><ellipse cx="462.9" cy="278.5" rx="10.0" ry="8.0" fill="#7E9152"/><rect width="800" height="600" filter="url(#g1)" opacity="0.05"/>
+</svg>
